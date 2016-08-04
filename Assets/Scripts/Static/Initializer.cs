@@ -22,15 +22,7 @@ public class Entity : MonoBehaviour
     //public string name;
     public string description;
 }
-[System.Serializable]
-public class LivingEntity:Entity
-{
-    public float HP;
-    public float energy;
-    public float speed;
-    Effect[] effects;
-    Vector2 coords;
-}
+
 [System.Serializable]
 public class School:Entity
 {
@@ -59,52 +51,28 @@ public abstract class TemporarySign : Sign
 public class Quen : TemporarySign
 {
     public float power;
-    public Quen()
-    {
-        name = "Quen";
-        power = 10;
-    }
+
+  
 }
-[System.Serializable]
-public class Irden : TemporarySign
-{
-    public float range;
-    
-    public Irden()
-    {
-        name = "Irden";
-        range = 5;
-    }
-}
+
 [System.Serializable]
 public class Axij : TemporarySign
 {
     public int targets;
-    public Axij()
-    {
-        name = "Axij";
-        targets = 5;
-    }
+
 }
 [System.Serializable]
 public class Igni : CombatSign
 {
     public Effect fire;
-    public Igni()
-    {
-        name = "Axij";
-        fire = new Poison();
-    }
+
 }
 [System.Serializable]
 public class Aard : TemporarySign
 {
     public float range;
     public float stanChance;
-    public Aard()
-    {
-        name = "Aard";
-    }
+
 }
 [System.Serializable]
 public class Effect:Entity
