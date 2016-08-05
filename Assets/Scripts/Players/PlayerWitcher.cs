@@ -17,8 +17,15 @@ public class PlayerWitcher : Witcher
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, Mathf.Infinity))
             {
-                Debug.Log("hit");
-                wayPoint = new Vector3(hit.point.x, hit.point.y, transform.position.z);
+                Debug.Log(hit.collider.tag);
+                if (hit.collider.tag == "Map")
+                {
+                    wayPoint = new Vector3(hit.point.x, hit.point.y, transform.position.z);
+                }
+                if (hit.collider.tag == "Enemy Icon")
+                {
+                    wayPoint = wayPoint = new Vector3(hit.collider.transform.position.x, hit.collider.transform.position.y, transform.position.z); 
+                }
             }
         }
         transform.position = Vector3.MoveTowards(transform.position, wayPoint, speed * Time.fixedDeltaTime);
