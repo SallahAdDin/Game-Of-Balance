@@ -3,8 +3,10 @@ using System.Collections;
 
 [System.Serializable]
 public class LivingEntity : Entity
-{   private float HP;
+{
+    [SerializeField]
     private float maxHP;
+    [SerializeField]
     private float currentHP;
     public float CurrentHP
     { set
@@ -38,6 +40,7 @@ public class LivingEntity : Entity
                 return maxHP;
             }
     }
+    [SerializeField]
     private float currentEnergy;
     public float CurrentEnergy
     {
@@ -55,6 +58,7 @@ public class LivingEntity : Entity
             return currentEnergy;
         }
     }
+    [SerializeField]
     private float  maxEnergy;
     public float MaxEnergy
     {
