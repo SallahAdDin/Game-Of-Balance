@@ -6,7 +6,10 @@ using System.Collections;
 public class Irden : TemporarySign
 {
     public float range;
+<<<<<<< HEAD
     
+=======
+>>>>>>> master
     public void Action()
     { }
 }
