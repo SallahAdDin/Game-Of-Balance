@@ -2,8 +2,21 @@
 using System.Collections;
 
 public abstract class Monster : LivingEntity
-{
-
+{	private float strength;
+	public float Strength
+	{set 
+		{	if(value>0)
+			{
+				strength = value
+			}
+		
+			else 
+			{
+			strength = 0;
+			}
+		}
+	}
+	public float[] specify_dmg= new float [] {1,1,1,1}; //silver, metall, fire, aard
     public abstract void Irden();
 
     

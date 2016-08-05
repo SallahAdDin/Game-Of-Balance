@@ -3,7 +3,8 @@ using System.Collections;
 
 [System.Serializable]
 public class LivingEntity : Entity
-{
+{	
+
     [SerializeField]
     private float maxHP;
     [SerializeField]
@@ -76,19 +77,30 @@ public class LivingEntity : Entity
             return maxEnergy;
         }
     }
-    public float speed;
+    private float speed;
+	public float Speed
+	{
+		set
+		{
+				speed = value;
+		}
+		get
+		{
+			return speed;
+		}
+	}
     Effect[] effects;
     Vector2 coords;
 
     
-    public void Attack(LivingEntity enemy)
+    public void Attack(LivingEntity enemy) //calculated damag from attack
     {
         float damage = 0;
         enemy.Attacked(damage);
    
     }
 
-    public void Attacked(float damage)
+    public void Attacked(float damage) //really events attack
     {
         currentHP = currentHP - damage;
     }
